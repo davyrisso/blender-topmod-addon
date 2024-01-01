@@ -2,14 +2,17 @@
 
 ## Install
 
-1. Download a release `.zip` file (`topmod.zip`)
+1. Download a [release](https://github.com/davyrisso/blender-topmod-addon/tags) `.zip` file ([`topmod.zip`](https://github.com/davyrisso/blender-topmod-addon/releases/download/v0.1.0-alpha/topmod.zip))
 2. In Blender: `Edit` > `Preferences` > `Add-ons` > `Install` > Select the `topmod.zip` file downloaded in step 1.
 
 ## Developer Workflow
 
 ### Blender Setup
 
-1. Install Blender
+1. Download and Install Blender
+
+   [Daily Builds](https://builder.blender.org/download/daily/)
+
 2. Clone this repository:
 
    `git clone https://github.com/davyrisso/blender-topmod-addon.git`
@@ -18,7 +21,7 @@
 
    `Edit` > `Preferences` > `File Paths` > `Script Directories` > `Add (+)`
 
-   Make sure to use the root of the directory (`blender-topmod-addon`) in which there is an `addons` directory.
+   **Note**: Make sure to use the root of the directory (`blender-topmod-addon`) in which there is an `addons` directory.
 
 4. Reload scripts in Blender
 
@@ -64,3 +67,5 @@
 
 - Run Blender **from the command line** to see all print statements
 - Use `Reload Scripts` when making changes: `Blender Menu` > `System` > `Reload Scripts`.
+
+  **Note**: For some changes, you might need to disable/re-enable the addon. Rarely, you will need to restart Blender.
