@@ -1,0 +1,6 @@
+bpy>=4.0.0
+fake-bpy-module-4.0
+black
+mypy
+flake8
+isort

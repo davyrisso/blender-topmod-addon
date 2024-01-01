@@ -1,5 +1,4 @@
 from bpy.types import AddonPreferences, Context
-
 from topmod.addon.dependencies import operators, utils
 
 

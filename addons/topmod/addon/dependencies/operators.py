@@ -1,7 +1,6 @@
 import subprocess
 
 from bpy.types import Context, Operator
-
 from topmod.addon.dependencies import utils
 
 
