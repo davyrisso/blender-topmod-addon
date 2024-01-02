@@ -1,6 +1,6 @@
-from topmod.addon import creation, dependencies
+from topmod.addon.creation import operators, ui
 
-MODULES = (dependencies, creation)
+MODULES = (operators, ui)
 
 
 def register():

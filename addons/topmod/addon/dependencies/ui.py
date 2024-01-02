@@ -1,8 +1,12 @@
+from bpy import utils
 from bpy.types import Context, Panel
-from topmod.addon.dependencies import operators, utils
+from topmod.addon.dependencies import operators
+
+from addons.topmod.addon.dependencies import install_utils
 
 
-class TOPMOD_PT_dependencies_panel(Panel):
+class DependenciesPanel(Panel):
+    bl_idname = "TOPMOD_PT_dependencies_panel"
     bl_label = "Dependencies"
     bl_category = "Topmod"
     bl_space_type = "VIEW_3D"
@@ -10,11 +14,24 @@ class TOPMOD_PT_dependencies_panel(Panel):
 
     @classmethod
     def poll(cls, context: Context):
-        return not utils.is_pytopmod_installed()
+        return not install_utils.is_pytopmod_installed()
 
     def draw(self, context: Context):
         self.layout.label(text="Dependencies not installed", icon="ERROR")
         self.layout.operator(
-            operators.TOPMOD_OT_install_dependencies.bl_idname,
+            operators.InstallDependenciesOperator.bl_idname,
             icon="CONSOLE",
         )
+
+
+classes = (DependenciesPanel,)
+
+
+def register():
+    for cls in classes:
+        utils.register_class(cls)
+
+
+def unregister():
+    for cls in classes:
+        utils.unregister_class(cls)
