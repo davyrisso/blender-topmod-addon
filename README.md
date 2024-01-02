@@ -20,7 +20,7 @@
 
 3. Add the root of the repository to Blender's script directories
 
-   `Edit` > `Preferences` > `File Paths` > `Script Directories` > `Add (+)`
+   In Blender: `Edit` > `Preferences` > `File Paths` > `Script Directories` > `Add (+)`
 
    **Note**: Make sure to use the root of the directory (`blender-topmod-addon`) in which there is an `addons` directory.
 
