@@ -62,7 +62,7 @@
    - `Cmd+P` > `Python: Select Interpreter`
    - Select `./.venv/bin.python`
 
-   Recommended extensions: Flake8, MyPy, Isort, Black.
+   Recommended extensions: [Flake8](https://marketplace.visualstudio.com/items?itemName=ms-python.flake8), [MyPy](https://github.com/microsoft/vscode-mypy), [Isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort), [Black](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter).
 
    **Note**: You may need to reload the VSCode window for the interpreter to pick up the dev dependencies (in particular bpy-fake-module), in which case do: `Cmd+P` > `Developer: Reload Window`.
 
