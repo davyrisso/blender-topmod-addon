@@ -2,8 +2,9 @@
 
 ## Install
 
-1. Download a [release](https://github.com/davyrisso/blender-topmod-addon/tags) `.zip` file ([`topmod.zip`](https://github.com/davyrisso/blender-topmod-addon/releases/download/v0.1.0-alpha/topmod.zip))
+1. Download a [release](https://github.com/davyrisso/blender-topmod-addon/tags) `topmod.zip` file ([`topmod.zip`](https://github.com/davyrisso/blender-topmod-addon/releases/download/v0.1.0-alpha/topmod.zip))
 2. In Blender: `Edit` > `Preferences` > `Add-ons` > `Install` > Select the `topmod.zip` file downloaded in step 1.
+3. Click the `Install Dependencies` button in the addon preferences.
 
 ## Developer Workflow
 
