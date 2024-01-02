@@ -36,6 +36,8 @@
 
    - Click the `Install Dependencies` button in the Addon preferences.
 
+**Note**: Removing the addon at this point from the `Add-ons` preferences in Blender will _**delete the addon source files**_, when working on the addon make sure you do not remove the addon, and make sure to commit often!
+
 ### Dev Environment Setup
 
 1. Create a virtual environment
