@@ -1,7 +1,7 @@
 PYTOPMOD_GIT_URL = "https://github.com/topmod-org/pytopmod-core.git"
 
 
-def is_pytopmod_installed():
+def is_pytopmod_installed() -> bool:
     import importlib
     import sys
 
@@ -15,7 +15,7 @@ def is_pytopmod_installed():
             return False
 
 
-def install_pytopmod():
+def install_pytopmod() -> None:
     import ensurepip
     import subprocess
     import sys

@@ -4,7 +4,7 @@ from bpy.types import Context, Event, Operator
 
 
 class CreateManifoldFromMeshOperator(Operator):
-    bl_idname = "TOPMOD_OT_creation_manifold_from_mesh"
+    bl_idname = "topmod.create_manifold_from_mesh"
     bl_label = "Create from Mesh"
     bl_description = "Creates a Topmod manifold from an existing Blender mesh"
     bl_options = {"REGISTER", "INTERNAL"}
@@ -17,15 +17,15 @@ class CreateManifoldFromMeshOperator(Operator):
     def poll(cls, context: Context) -> bool:
         return context.object.type == "MESH"
 
-    def invoke(self, context: Context, event: Event):
+    def invoke(self, context: Context, event: Event) -> set[str] | set[int]:
         return context.window_manager.invoke_props_dialog(self)
 
-    def execute(self, context: Context):
+    def execute(self, context: Context) -> set[str]:
         return {"FINISHED"}
 
 
 class CreateManifoldPrimitiveOperator(Operator):
-    bl_idname = "TOPMOD_OT_creation_manifold_primitive"
+    bl_idname = "topmod.create_manifold_primitive"
     bl_label = "Create Manifold Primitive"
     bl_description = "Creates a Topmod manifold primitive"
     bl_options = {"REGISTER", "INTERNAL"}
@@ -44,17 +44,13 @@ class CreateManifoldPrimitiveOperator(Operator):
     )
 
     @classmethod
-    def poll(cls, context: Context):
+    def poll(cls, context: Context) -> bool:
         return True
 
-    def draw(self, context: Context):
-        self.layout.prop(self, "structure")
-        self.layout.prop(self, "primitive_kind")
-
-    def invoke(self, context: Context, event: Event):
+    def invoke(self, context: Context, event: Event) -> set[str] | set[int]:
         return context.window_manager.invoke_props_dialog(self)
 
-    def execute(self, context: Context):
+    def execute(self, context: Context) -> set[str]:
         return {"FINISHED"}
 
 

@@ -1,8 +1,6 @@
 from bpy import utils
 from bpy.types import Context, Panel
-from topmod.addon.dependencies import operators
-
-from addons.topmod.addon.dependencies import install_utils
+from topmod.addon.dependencies import install_utils, operators
 
 
 class DependenciesPanel(Panel):
@@ -13,7 +11,7 @@ class DependenciesPanel(Panel):
     bl_region_type = "UI"
 
     @classmethod
-    def poll(cls, context: Context):
+    def poll(cls, context: Context) -> bool:
         return not install_utils.is_pytopmod_installed()
 
     def draw(self, context: Context):

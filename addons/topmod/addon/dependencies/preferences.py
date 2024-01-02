@@ -1,8 +1,6 @@
 from bpy import utils
 from bpy.types import AddonPreferences, Context
-from topmod.addon.dependencies import operators
-
-from addons.topmod.addon.dependencies import install_utils
+from topmod.addon.dependencies import install_utils, operators
 
 
 class DependenciesPreferences(AddonPreferences):

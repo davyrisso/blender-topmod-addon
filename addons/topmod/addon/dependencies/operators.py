@@ -1,12 +1,12 @@
 import subprocess
 
+from bpy import utils
 from bpy.types import Context, Operator
-
-from addons.topmod.addon.dependencies import install_utils
+from topmod.addon.dependencies import install_utils
 
 
 class InstallDependenciesOperator(Operator):
-    bl_idname = "TOPMOD_OT_install_dependencies"
+    bl_idname = "topmod.install_dependencies"
     bl_label = "Install Dependencies"
     bl_description = (
         "Downloads and installs the required python packages for topmod add-on. "
@@ -15,10 +15,10 @@ class InstallDependenciesOperator(Operator):
     bl_options = {"REGISTER", "INTERNAL"}
 
     @classmethod
-    def poll(cls, context: Context):
+    def poll(cls, context: Context) -> bool:
         return not install_utils.is_pytopmod_installed()
 
-    def execute(self, context: Context):
+    def execute(self, context: Context) -> set[str]:
         try:
             install_utils.install_pytopmod()
         except (subprocess.CalledProcessError, ImportError) as err:
@@ -33,9 +33,9 @@ CLASSES = (InstallDependenciesOperator,)
 
 def register():
     for cls in CLASSES:
-        install_utils.register_class(cls)
+        utils.register_class(cls)
 
 
 def unregister():
     for cls in CLASSES:
-        install_utils.unregister_class(cls)
+        utils.unregister_class(cls)
