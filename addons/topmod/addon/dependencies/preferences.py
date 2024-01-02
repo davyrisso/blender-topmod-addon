@@ -1,9 +1,10 @@
 from bpy.types import AddonPreferences, Context
+from topmod.addon import constants
 from topmod.addon.dependencies import operators, utils
 
 
 class TOPMOD_dependencies_preferences(AddonPreferences):
-    bl_idname = "topmod"
+    bl_idname = constants.ADDON_NAME
 
     def draw(self, context: Context):
         if utils.is_pytopmod_installed():

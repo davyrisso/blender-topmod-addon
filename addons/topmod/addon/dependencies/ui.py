@@ -1,5 +1,4 @@
 from bpy.types import Context, Panel
-
 from topmod.addon.dependencies import operators, utils
 
 

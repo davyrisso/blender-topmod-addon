@@ -1,5 +1,4 @@
 from bpy import utils as bpy_utils
-
 from topmod.addon.dependencies import operators, preferences, ui
 
 CLASSES = (
