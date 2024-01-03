@@ -1,17 +1,17 @@
-from topmod.addon import creation, dependencies
+from topmod.addon import dependencies
 from topmod.addon.dependencies import install_utils
-
-MODULES = (creation,)
 
 
 def register():
     dependencies.register()
 
     if install_utils.is_pytopmod_installed():
-        for module in MODULES:
-            module.register()
+        from topmod.addon import creation
+
+        creation.register()
 
 
 def unregister():
-    for module in MODULES:
-        module.unregister()
+    from topmod.addon import creation
+
+    creation.unregister()

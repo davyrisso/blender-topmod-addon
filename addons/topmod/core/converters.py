@@ -1,7 +1,5 @@
 import bpy  # noqa: F401.
 from pytopmod.core.dlfl import mesh as dlfl_mesh
-from pytopmod.core.face import FaceKey
-from pytopmod.core.vertex import VertexKey
 
 import bmesh  # isort: skip
 
