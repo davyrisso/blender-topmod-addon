@@ -22,6 +22,8 @@ class TOPMOD_OT_install_dependencies(Operator):
     def execute(self, context: Context) -> set[str]:
         try:
             install_utils.install_pytopmod()
+            addon_utils.unregister_addon()
+            addon_utils.register_addon()
             addon_utils.reload_addon()
         except (subprocess.CalledProcessError, ImportError) as err:
             self.report({"ERROR"}, str(err))

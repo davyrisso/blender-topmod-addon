@@ -30,3 +30,19 @@ def install_pytopmod() -> None:
             f"git+{PYTOPMOD_GIT_URL}",
         ]
     )
+
+
+def uninstall_pytopmod():
+    import subprocess
+    import sys
+
+    subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "pip",
+            "uninstall",
+            "-y",
+            "pytopmod",
+        ]
+    )

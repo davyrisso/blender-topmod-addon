@@ -12,7 +12,7 @@ class TOPMOD_dependencies_preferences(AddonPreferences):
         else:
             self.layout.label(text="Dependencies not installed", icon="ERROR")
             self.layout.operator(
-                operators.InstallDependenciesOperator.bl_idname,
+                operators.TOPMOD_OT_install_dependencies.bl_idname,
                 icon="CONSOLE",
             )
 
