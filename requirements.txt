@@ -1,1 +1,2 @@
+git+https://github.com/topmod-org/pytopmod-core.git
 bpy>=4.0.0

@@ -3,7 +3,7 @@ from bpy.types import AddonPreferences, Context
 from topmod.addon.dependencies import install_utils, operators
 
 
-class DependenciesPreferences(AddonPreferences):
+class TOPMOD_dependencies_preferences(AddonPreferences):
     bl_idname = __package__.split(".")[0]
 
     def draw(self, context: Context):
@@ -17,7 +17,7 @@ class DependenciesPreferences(AddonPreferences):
             )
 
 
-CLASSES = (DependenciesPreferences,)
+CLASSES = (TOPMOD_dependencies_preferences,)
 
 
 def register():

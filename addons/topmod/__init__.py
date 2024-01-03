@@ -15,7 +15,6 @@ bl_info = {
 
 
 def reload() -> None:
-    print("RELOADING TOPMOD")
     sys.modules[__name__] = importlib.reload(sys.modules[__name__])
     for name, module in list(sys.modules.items()):
         if (
