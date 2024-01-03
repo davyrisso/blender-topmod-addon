@@ -1,3 +1,5 @@
+from topmod.addon import module_utils
+
 bl_info = {
     "name": "Topmod",
     "author": "Topmod Team",
@@ -8,22 +10,7 @@ bl_info = {
     "category": "3D View",
 }
 
-
-def reload():
-    import importlib
-    import sys
-
-    sys.modules[__name__] = importlib.reload(sys.modules[__name__])
-    for name, module in list(sys.modules.items()):
-        if (
-            hasattr(module, "__package__")
-            and module.__package__ is not None
-            and module.__package__.startswith(__name__)
-        ):
-            sys.modules[name] = importlib.reload(module)
-
-
-reload()
+module_utils.reload_addon()
 
 
 def register():

@@ -2,6 +2,7 @@ import subprocess
 
 from bpy import utils
 from bpy.types import Context, Operator
+from topmod.addon import module_utils
 from topmod.addon.dependencies import install_utils
 
 
@@ -21,6 +22,7 @@ class InstallDependenciesOperator(Operator):
     def execute(self, context: Context) -> set[str]:
         try:
             install_utils.install_pytopmod()
+            module_utils.reload_addon()
         except (subprocess.CalledProcessError, ImportError) as err:
             self.report({"ERROR"}, str(err))
             return {"CANCELLED"}
