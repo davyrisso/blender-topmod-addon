@@ -1,6 +1,5 @@
+from topmod.addon import addon_utils
 from topmod.addon.dependencies import install_utils
-
-from addons.topmod.addon import addon_utils
 
 bl_info = {
     "name": "Topmod",

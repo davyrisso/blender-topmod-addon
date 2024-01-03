@@ -2,9 +2,8 @@ import subprocess
 
 from bpy import utils
 from bpy.types import Context, Operator
+from topmod.addon import addon_utils
 from topmod.addon.dependencies import install_utils
-
-from addons.topmod.addon import addon_utils
 
 
 class TOPMOD_OT_install_dependencies(Operator):
