@@ -1,8 +1,3 @@
-import importlib
-import sys
-
-from topmod import addon
-
 bl_info = {
     "name": "Topmod",
     "author": "Topmod Team",
@@ -14,7 +9,10 @@ bl_info = {
 }
 
 
-def reload() -> None:
+def reload():
+    import importlib
+    import sys
+
     sys.modules[__name__] = importlib.reload(sys.modules[__name__])
     for name, module in list(sys.modules.items()):
         if (
@@ -29,8 +27,12 @@ reload()
 
 
 def register():
+    from topmod import addon
+
     addon.register()
 
 
 def unregister():
+    from topmod import addon
+
     addon.unregister()
