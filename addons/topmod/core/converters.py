@@ -1,5 +1,6 @@
 import bpy  # noqa: F401.
 from pytopmod.core.dlfl import mesh as dlfl_mesh
+from pytopmod.core.vertex import VertexKey
 
 import bmesh  # isort: skip
 
@@ -47,7 +48,7 @@ def bmesh_to_dlfl(input_mesh: bmesh.types.BMesh) -> dlfl_mesh.DLFLMesh:
 def dlfl_to_bmesh(input_mesh: dlfl_mesh.DLFLMesh) -> bmesh.types.BMesh:
     output_mesh = bmesh.new()
 
-    vertex_index_map = {}
+    vertex_index_map: dict[VertexKey, bmesh.types.BMVert] = {}
     for index, vertex_key in enumerate(input_mesh.vertex_keys):
         vertex_index_map[vertex_key] = output_mesh.verts.new(
             input_mesh.vertex_coordinates[vertex_key]
